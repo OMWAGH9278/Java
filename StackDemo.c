@@ -3,9 +3,8 @@
 int Addition(int No1, int No2)
 {
     int Ans = 0;
-
     printf("Inside Addition\n");
-
+    
     Ans = No1 + No2;
 
     return Ans;
@@ -21,10 +20,5 @@ int main()
 
     printf("Addition is : %d\n",Ret);
 
-    return 0; 
+    return 0;
 }
-
-// NI : Next Instruction
-// OEBP : Old EBP
-// EBP : Base Pointer
-// ESP : Stack Pointer
