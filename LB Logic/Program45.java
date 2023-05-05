@@ -1,0 +1,38 @@
+
+import java.util.*;
+
+/* 
+    Input : 4529
+
+    9   2   5   4
+*/
+
+class Pattern
+{
+    public void display(int iNo)
+    {
+        int iDigit = 0;
+
+        while(iNo != 0)
+        {
+            iDigit = iNo % 10;
+            System.out.print(iDigit+"\t");
+            iNo = iNo / 10;            
+        }
+        System.out.println();
+    }
+}
+
+class Program45
+{
+    public static void main(String a[])
+    {
+        Pattern pobj = new Pattern();
+        Scanner sobj = new Scanner(System.in);
+
+        System.out.println("Enter number :");
+        int iNo = sobj.nextInt();
+
+        pobj.display(iNo);
+    }
+}
