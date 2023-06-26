@@ -1,4 +1,6 @@
 
+import java.lang.annotation.Annotation;
+
 @interface MyAnnotation {
     String firstName();
 

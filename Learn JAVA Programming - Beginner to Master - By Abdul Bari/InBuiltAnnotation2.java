@@ -1,4 +1,11 @@
 
+import java.lang.annotation.*;
+
+@Retention(RetentionPolicy.CLASS)
+@Documented
+@Target(value = { ElementType.LOCAL_VARIABLE, ElementType.METHOD })
+@Inherited
+// @Repeatable(MyAnnotation.class)
 @interface MyAnnotation {
     String firstName();
 
@@ -7,9 +14,15 @@
     String lastName();
 }
 
-@MyAnnotation(firstName = "Om", middleName = "Mangesh", lastName = "Wagh")
-class UserDefinedAnnotation {
+class InBuiltAnnotation2 {
+    @MyAnnotation(firstName = "Om", middleName = "Mangesh", lastName = "Wagh")
+    public int value() {
+        return 1;
+    }
+
     public static void main(String arg[]) {
-        System.out.println();
+        @MyAnnotation(firstName = "Om", middleName = "Mangesh", lastName = "Wagh")
+        int numFirst;
+
     }
 }
