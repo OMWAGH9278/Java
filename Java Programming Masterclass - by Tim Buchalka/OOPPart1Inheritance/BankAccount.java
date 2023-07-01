@@ -1,90 +1,54 @@
-package OOPPart1Inheritance;
-
 public class BankAccount {
 
-    private String number;
-    private double balance;
+    private long accountNumber;
+    private int accountBalance;
     private String customerName;
-    private String customerEmail;
-    private String customerPhone;
+    private String email;
+    private long phoneNumber;
 
-    public BankAccount() {
-        this("56789", 2.50, "Default name", "Default address", "Default phone");
+    public BankAccount(){
         System.out.println("Empty constructor called");
     }
 
-    public BankAccount(String number, double balance, String customerName, String email, String phone) {
-        System.out.println("Account constructor with parameters called");
-        this.balance = balance;
-        this.number = number;
-        this.customerName = customerName;
-        customerEmail = email;
-        customerPhone = phone;
-    }
+//    public BankAccount(){
+//
+//    }
 
-    public BankAccount(String customerName, String customerEmail, String customerPhone) {
-        this("99999", 100.55, customerName,
-                customerEmail, customerPhone);
-        // this.customerName = customerName;
-        // this.customerEmail = customerEmail;
-        // this.customerPhone = customerPhone;
+    public long getAccountNumber() {
+        return accountNumber;
     }
-
-    public void depositFund(double funds) {
-        this.balance += funds;
-        System.out.println("Deposit of $" + funds +
-                " processed, New balance is $" + balance);
+    public void setAccountNumber(long accountNumber) {
+        this.accountNumber = accountNumber;
     }
-
-    public void withdrawFund(double funds) {
-        if (this.balance < funds) {
-            System.out.println("Insufficient funds in your account. You only have $" + this.balance +
-                    " in your account");
-        } else {
-            this.balance -= funds;
-            System.out.println("Withdrawal of $" + funds +
-                    " processed, Remaining balance = $" + balance);
-        }
+    public void setAccountBalance(int accountBalance) {
+        this.accountBalance = accountBalance;
     }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public void setAccountBalance(double accountBalance) {
-        this.balance = accountBalance;
-    }
-
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }
-
-    public void setCustomerEmail(String customerEmail) {
-        this.customerEmail = customerEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
-
-    public void setCustomerPhone(String customerPhone) {
-        this.customerPhone = customerPhone;
+    public void setPhoneNumber(long phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
-
-    public double getAccountBalance() {
-        return balance;
+    public int getAccountBalance() {
+        return accountBalance;
     }
-
     public String getCustomerName() {
         return customerName;
     }
-
-    public String getCustomerEmail() {
-        return customerEmail;
+    public String getEmail() {
+        return email;
+    }
+    public long getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public String getCustomerPhone() {
-        return customerPhone;
+    public void depositFund(int fund){
+        this.accountBalance+=fund;
     }
-
+    public void withdrawFund(int fund){
+        this.accountBalance-=fund;
+    }
 }
